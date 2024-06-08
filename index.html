@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- ===== favicon ===== -->
+     <link rel="icon" href="./imgs/bookmark.png" />
+     <!-- Render all elements normally -->
+     <link rel="stylesheet" href="css/normalize.css" />
+     <!-- fonts google -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+     <!-- fonts awesome -->
+     <link rel="stylesheet" href="css/all.min.css" />
+     <!-- bootstrap css library -->
+     <link rel="stylesheet" href="css/bootstrap.min.css" />
+     <!-- main stylesheet -->
+     <link rel="stylesheet" href="css/main.css" />
+    <title>Bookmark</title>
+</head>
+<body>
+    
+<div class="bookmark position-relative py-5">
+    <div class="container d-flex justify-content-center align-items-center flex-column">
+        <h1 class="py-2 position-relative">Bookmarker</h1>
+        <div class="bookmark-body w-100 d-flex justify-content-center align-items-center flex-column p-3 my-5 gap-4 py-4">
+            <h2>
+                <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="site-name w-100">
+                <label for="siteName" class="fw-bold pb-2">
+                    <i class="fa-solid fa-book pe-2"></i>
+                        Site Name
+                </label>
+                <input oninput="allValidation(this,'msgName')" id="siteName" type="text" class="form-control" placeholder="Bookmark Name">
+                <p id="msgName" class="alert alert-danger p-2 d-none">website name is invalid</p>
+            </div>
+            <div class="site-url w-100">
+                <label for="siteUrl" class="fw-bold pb-2">
+                    <i class="fa-solid fa-link pe-2"></i>
+                        Site URL
+                </label>
+                <input oninput="allValidation(this,'msgUrl')" id="siteUrl" type="text" class="form-control" placeholder="Website URL">
+                <p id="msgUrl" class="alert alert-danger p-2 d-none">website url is invalid</p>
+            </div>
+            <button onclick="addWebsite()" class="btn btn-success px-5" id="submitBtn">Submit</button>
+        </div>
+        <table class="table bg-light text-center mt-4">
+            <thead>
+                <th class="text-table">index</th>
+                <th class="text-table">Website Name</th>
+                <th class="text-table">Visit</th>
+                <th class="text-table">Delete</th>
+            </thead>
+            <tbody id="tableContent"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
